@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>King Bot Dashboard</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111827;
+      color: white;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+    }
+
+    .status {
+      text-align: center;
+      padding: 15px;
+      background: #1f2937;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .label {
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    .value {
+      font-size: 26px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 25px;
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>👑 King Bot</h1>
+
+    <div class="status">
+      Bot Status:
+      <strong id="botStatus">OFF</strong>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="label">Account Balance</div>
+        <div class="value" id="balance">$0.00</div>
+      </div>
+
+      <div class="card">
+        <div class="label">Profit / Loss</div>
+        <div class="value" id="profit">$0.00</div>
+      </div>
+
+      <div class="card">
+        <div class="label">Open Trades</div>
+        <div class="value" id="trades">0</div>
+      </div>
+
+      <div class="card">
+        <div class="label">Trade Size</div>
+        <div class="value">$0.10</div>
+      </div>
+
+    </div>
+
+    <button onclick="toggleBot()">
+      START / STOP KING BOT
+    </button>
+
+  </div>
+
+  <script>
+
+    let botRunning = false;
+
+    function toggleBot() {
+
+      botRunning = !botRunning;
+
+      document.getElementById("botStatus").innerText =
+        botRunning ? "ON" : "OFF";
+
+    }
+
+  </script>
+
+</body>
+</html>
